@@ -8,6 +8,10 @@ namespace PandellAssignment1
 {
     class Assignment
     {
+        /// <summary>
+        /// Print flag 
+        /// Disables in Project Properties
+        /// </summary>
         static bool Print;
 
         static async Task Main(string[] args)
@@ -26,9 +30,7 @@ namespace PandellAssignment1
         private static List<int> Randomize(int max)
         {
             Random rand = new Random();
-            List<int> List = Enumerable.Range(1, max)
-                //.Reverse()
-                .ToList();
+            List<int> List = Enumerable.Range(1, max).ToList();
             int j, temp;
             for (int i = 0; i < max; i++)
             {
@@ -46,18 +48,19 @@ namespace PandellAssignment1
             stopwatch.Start();
             List<int> List = Randomize(max);
             stopwatch.Stop();
+            long AlgorithmTime = stopwatch.ElapsedMilliseconds;
             if (Print)
             {
                 stopwatch.Restart();
-                foreach(int number in List)
+                foreach (int number in List)
                 {
                     Console.Write($"{number}\t");
                 }
                 Console.WriteLine();
                 stopwatch.Stop();
-                Console.WriteLine($"Display - Elapsed: {stopwatch.ElapsedMilliseconds} ms");
+                Console.WriteLine($"Display Time: {stopwatch.ElapsedMilliseconds} ms");
             }
-            Console.WriteLine($"Algorithm - Elapsed {stopwatch.ElapsedMilliseconds} ms");
+            Console.WriteLine($"Algorithm Time: {AlgorithmTime} ms");
         }
 
     }
