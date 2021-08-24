@@ -1,2 +1,2 @@
 # assignment
-Flag Print disables in Project Properties
+Flag `Print` disables in Project Properties
