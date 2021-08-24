@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PandellAssignment1": {
+      "commandName": "Project",
+      "commandLineArgs": "true"
+    }
+  }
+}
